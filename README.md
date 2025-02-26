@@ -16,11 +16,11 @@ While [`scala-aws-lambda-runtime`](https://github.com/encalmo/scala-aws-lambda-r
 
 Use with SBT
 
-    libraryDependencies += "org.encalmo" %% "scala-aws-lambda-utils" % "0.9.0"
+    libraryDependencies += "org.encalmo" %% "scala-aws-lambda-utils" % "0.9.1"
 
 or with SCALA-CLI
 
-    //> using dep org.encalmo::scala-aws-lambda-utils:0.9.0
+    //> using dep org.encalmo::scala-aws-lambda-utils:0.9.1
 
 ## Models
 
