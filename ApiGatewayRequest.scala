@@ -104,9 +104,6 @@ final case class ApiGatewayRequest(
   inline def maybeStageVariable(key: String, defaultValue: String): String =
     Option(stageVariables).flatMap(_.get(key)).getOrElse(defaultValue)
 
-  final lazy val lambdaAlias: String =
-    maybeStageVariable("LAMBDA_ALIAS").getOrElse("beta")
-
   final def computePathWithQueryParameters: String =
     modifyPath(path => s"https://foo${path}")
       .toHttpRequest()
