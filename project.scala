@@ -1,4 +1,6 @@
 //> using scala 3.3.5
+//> using exclude scripts
+//> using toolkit 0.7.0
 //> using test.dep org.scalameta::munit:1.1.0
 //> using publish.organization "org.encalmo"
 //> using publish.name "scala-aws-lambda-utils"

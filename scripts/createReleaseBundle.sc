@@ -61,7 +61,7 @@ call(
 println(s"${GREEN}Publishing package locally ...${RESET}")
 
 val command =
-  s"""scala-cli --power publish local project.scala --organization $organization --name $name --project-version $version $signer --suppress-deprecated-warnings --suppress-experimental-feature-warning --suppress-directives-in-multiple-files-warning --suppress-deprecated-feature-warning"""
+  s"""scala-cli --power publish local . --organization $organization --name $name --project-version $version $signer --suppress-deprecated-warnings --suppress-experimental-feature-warning --suppress-directives-in-multiple-files-warning --suppress-deprecated-feature-warning"""
 
 val (publishedFolder, coordinates) = {
   val ivyLocation = call(command).last.trim()
