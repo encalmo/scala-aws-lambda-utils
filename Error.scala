@@ -1,5 +1,7 @@
 package org.encalmo.lambda
 
+import org.encalmo.utils.JsonUtils.*
+
 import upickle.default.*
 import Utils.*
 import java.time.Instant
