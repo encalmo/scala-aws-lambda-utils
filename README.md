@@ -1,3 +1,5 @@
+![Maven Central Version](https://img.shields.io/maven-central/v/org.encalmo/scala-aws-lambda-utils_3?style=for-the-badge)
+
 # scala-aws-lambda-utils
 
 This Scala3 library provides models and utilities supplementing [`scala-aws-lambda-runtime`](https://github.com/encalmo/scala-aws-lambda-runtime).
