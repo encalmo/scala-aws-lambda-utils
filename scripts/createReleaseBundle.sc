@@ -100,6 +100,13 @@ call(s"ls -l $bundleArchivePath").foreach(println)
 call(s"mv bundle.zip $bundleFilePath", cwd = tempDir).foreach(println)
 println(s"${GREEN}Bundle archive ready at $bundleFilePath${RESET}")
 
+println(s"${GREEN}Uzipping scaladoc ...${RESET}")
+val siteFolderPath = os.pwd / "_site"
+val javadocFilePath = publishedFolder / "docs" / s"${artefactName}-javadoc.jar"
+os.makeDir.all(siteFolderPath)
+call(s"unzip $javadocFilePath -d $siteFolderPath")
+println(s"${GREEN}Scaladoc ready.${RESET}")
+
 // ---------- UTILS ----------
 
 def call(command: String, cwd: os.Path = os.pwd): Seq[String] =
