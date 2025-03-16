@@ -23,6 +23,7 @@ permissions:
   contents: write # This is required for actions/checkout
   packages: write
   pull-requests: write 
+  pages: write    # to deploy to Pages
 
 env:
   TAG_PREFIX: '${{ inputs.tag-prefix }}-'  
