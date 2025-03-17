@@ -1,4 +1,5 @@
-![Maven Central Version](https://img.shields.io/maven-central/v/org.encalmo/scala-aws-lambda-utils_3?style=for-the-badge)
+![Maven Central Version](https://img.shields.io/maven-central/v/org.encalmo/scala-aws-lambda-utils_3?style=for-the-badge) ![Static Badge](https://img.shields.io/badge/docs-scaladoc-red?style=for-the-badge&link=https%3A%2F%2Fencalmo.github.io%2Fscala-aws-lambda-utils%2Forg%2Fencalmo%2Flambda.html)
+
 
 # scala-aws-lambda-utils
 
