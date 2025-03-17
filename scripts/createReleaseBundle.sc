@@ -101,7 +101,7 @@ call(s"mv bundle.zip $bundleFilePath", cwd = tempDir).foreach(println)
 println(s"${GREEN}Bundle archive ready at $bundleFilePath${RESET}")
 
 println(s"${GREEN}Uzipping scaladoc ...${RESET}")
-val siteFolderPath = os.pwd / "_site"
+val siteFolderPath = os.pwd / "_site" / "scaladoc"
 val javadocFilePath = publishedFolder / "docs" / s"${artefactName}-javadoc.jar"
 os.makeDir.all(siteFolderPath)
 call(s"unzip $javadocFilePath -d $siteFolderPath")
