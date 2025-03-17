@@ -44,6 +44,12 @@ jobs:
         run: |
           echo "${{ secrets.GPG_SECRET_KEY }}" | base64 -d | gpg --import
           gpg -K
+      - name: Convert Markdown to HTML
+        uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
+        with:
+          path: README.md
+          outputpath: _site
+          matchpathstructure: true
       - id: version
         name: Compute new version   
         run: ./scripts/computeNewVersion.sc --prefix='${{ env.TAG_PREFIX }}' --bump=${{ inputs.version-bump }} >> "$GITHUB_OUTPUT"
