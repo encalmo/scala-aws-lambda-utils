@@ -13,6 +13,12 @@ on:
           - minor
           - patch
           - keep
+      pages-only:
+        type: boolean
+        description: 'Skip release, generate only Github Pages'
+        required: true
+        default: false
+
   # push:
   #   branches: [main]
   #   paths:
@@ -25,3 +31,4 @@ jobs:
     with:
       tag-prefix: 'lambda-utils'
       version-bump: ${{ inputs.version-bump || 'patch' }}
+      pages-only: ${{ inputs.pages-only }}

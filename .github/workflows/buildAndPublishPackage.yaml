@@ -9,7 +9,11 @@ on:
       version-bump:
         type: string
         required: true  
-        default: 'minor'
+        default: 'patch'
+      pages-only:
+        type: boolean
+        required: true
+        default: false
     secrets:
       SONATYPE_TOKEN:
         required: true 
@@ -56,6 +60,7 @@ jobs:
       - name: Create release bundle
         run: './scripts/createReleaseBundle.sc --version=${{ steps.version.outputs.new_version }} --gpg-key=${{ secrets.GPG_SECRET_KEY_ID }}'
       - name: Upload bundle to Sonatype
+        if: ${{ !inputs.pages-only }}
         run: |
           curl --request POST \
           --verbose \
