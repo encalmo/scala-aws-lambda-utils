@@ -48,12 +48,6 @@ jobs:
         run: |
           echo "${{ secrets.GPG_SECRET_KEY }}" | base64 -d | gpg --import
           gpg -K
-      - name: Convert Markdown to HTML
-        uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
-        with:
-          path: README.md
-          outputpath: _site
-          matchpathstructure: true
       - id: version
         name: Compute new version   
         run: ./scripts/computeNewVersion.sc --prefix='${{ env.TAG_PREFIX }}' --bump=${{ inputs.version-bump }} >> "$GITHUB_OUTPUT"
@@ -92,6 +86,15 @@ jobs:
           tag_name: ${{ env.TAG_PREFIX }}${{ steps.version.outputs.new_version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      - name: Convert Markdown to HTML
+        uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
+        with:
+          path: README.md
+          outputpath: _site
+          matchpathstructure: true
+      - name: Rename README.html to index.html
+        run: |
+          mv ./_site/README.html ./_site/index.html 
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
