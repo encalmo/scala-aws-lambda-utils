@@ -4,3 +4,5 @@
 .vscode/
 bundle.zip
 _site/
+
+*.zip
