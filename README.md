@@ -14,6 +14,7 @@ This Scala3 library provides models and utilities supplementing [`scala-aws-lamb
 - [Extensions](#extensions)
 - [Patterns](#patterns)
 - [Utils](#utils)
+- [Project content](#project-content)
 
 ## Motivation
 
@@ -97,9 +98,9 @@ Common AWS Lambda request/response structures
 ├── OptionPickler.scala
 ├── project.scala
 ├── README.md
-├── scala-aws-lambda-utils_3-0.9.5.zip
 ├── SqsEvent.scala
 ├── test.sh
 ├── Utils.scala
 └── Utils.test.scala
 ```
+
